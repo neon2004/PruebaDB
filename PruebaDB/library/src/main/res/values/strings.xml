@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="type_to_search">Usuario a buscar</string>
+    <string name="noResult">Sin resultados</string>
+
+</resources>

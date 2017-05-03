@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">PruebaDB</string>
+    <string name="usuario">Usuario</string>
+    <string name="usuarios">Usuariso</string>
+    <string name="pass">Contraseña</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="crear_tarea">Crear tarea</string>
+    <string name="tareas_asignadas">Tareas asignadas</string>
+    <string name="descripcion_tarea">Descripción tarea</string>
+    <string name="duracion_tarea">Duración tarea</string>
+    <string name="error_datos_sin_rellenar">Debes rellenar todos los datos</string>
+    <string name="tarea_creada">Tarea cread correctamente</string>
+    <string name="error_crear_tarea">Error al crear la tarea</string>
+    <string name="completa">completa</string>
+    <string name="incompleta">incompleta</string>
+    <string name="marcar_completa">Marcar completa</string>
+    <string name="cerrar_cesion">Cerrar cesión</string>
+    <string name="tareas">Tareas</string>
+    <string name="duracion">Dureación</string>
+    <string name="estado">Estado</string>
+    <string name="errorNoInternet">Sin conexion a internet</string>
+    <string name="datos_servicio">Datos Servicio</string>
+    <string name="descripcion">Descripción:</string>
+    <string name="categoria">Categoria:</string>
+    <string name="telefono">Teléfono:</string>
+    <string name="zipcode">ZipCode:</string>
+    <string name="errorUser">Error datos usuario</string>
+</resources>

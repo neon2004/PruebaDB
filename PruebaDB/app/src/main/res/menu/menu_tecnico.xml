@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dj.example.pruebadb.usuario.view.UsuarioActivity_">
+
+    <item
+        android:id="@+id/MnuCompletarTarea"
+        android:title="@string/marcar_completa"></item>
+    <item
+        android:id="@+id/MnuTareaAsignadas"
+        android:title="@string/tareas_asignadas"
+        ></item>
+    <item
+        android:id="@+id/MnuGetDataService"
+        android:title="@string/datos_servicio"
+        ></item>
+    <item
+        android:id="@+id/MnuCerrarSesion"
+        android:title="@string/cerrar_cesion"
+        android:icon="@mipmap/ic_closed"
+        ></item>
+
+</menu>
