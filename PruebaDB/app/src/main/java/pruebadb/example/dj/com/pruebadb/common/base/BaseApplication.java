@@ -12,6 +12,7 @@ import java.util.List;
 import pruebadb.example.dj.com.pruebadb.R;
 import pruebadb.example.dj.com.pruebadb.common.util.TareaType;
 import pruebadb.example.dj.com.pruebadb.common.util.UsuarioType;
+import pruebadb.example.dj.com.pruebadb.common.util.Util;
 import pruebadb.example.dj.com.pruebadb.pruebadb.db.DaoMaster;
 import pruebadb.example.dj.com.pruebadb.pruebadb.db.DaoSession;
 import pruebadb.example.dj.com.pruebadb.pruebadb.db.DataService;
@@ -93,72 +94,23 @@ public class BaseApplication extends Application {
                 user.setTipoUsuario(UsuarioType.Técnico.name());
                 userDao.insertInTx(user);
 
-                int j;
-                if(i == 2 || i == 3){
-                    j = i -1;
+                int numAleatorio = Util.generateRandom(10);
+                if(numAleatorio % 2 == 0 ){
+                    int idTareaAleatorio = Util.generateRandom(TareaType.values().length);
                     PermisoTareasUser permiso = new PermisoTareasUser();
                     permiso.setPermiso(true);
-                    permiso.setIdTarea(Long.valueOf(j));
+                    permiso.setIdTarea(Long.valueOf(idTareaAleatorio));
                     permiso.setIdUser(user.getId());
                     permisoTareasUserDao.insertInTx(permiso);
 
                     RelacionUsuarioTarea rel = new RelacionUsuarioTarea();
-                    rel.setIdTarea(Long.valueOf(j));
+                    rel.setIdTarea(Long.valueOf(idTareaAleatorio));
                     rel.setIdUser(user.getId());
                     rel.setEstado(getString(R.string.incompleta));
                     getRelacionUserTareaDao().insertInTx(rel);
                 }
-
-//                int numAleatorio = Util.generateRandom(10);
-//                if(numAleatorio % 2 == 0 ){
-//                    int idTareaAleatorio = Util.generateRandom(TareaType.values().length);
-//                    PermisoTareasUser permiso = new PermisoTareasUser();
-//                    permiso.setPermiso(true);
-//                    permiso.setIdTarea(Long.valueOf(idTareaAleatorio));
-//                    permiso.setIdUser(user.getId());
-//                    permisoTareasUserDao.insertInTx(permiso);
-//
-//                    RelacionUsuarioTarea rel = new RelacionUsuarioTarea();
-//                    rel.setIdTarea(Long.valueOf(idTareaAleatorio));
-//                    rel.setIdUser(user.getId());
-//                    rel.setEstado(getString(R.string.incompleta));
-//                    getRelacionUserTareaDao().insertInTx(rel);
-//                }
             }
         }
-
-//
-//        List<RelacionUsuarioTarea> l = BaseApplication.getInstance().getRelacionUserTareaDao().queryBuilder().list();
-//
-////        String[] colums = BaseApplication.getInstance().getRelacionUserTareaDao().getAllColumns();
-////        String sql = "COUNT(T."+ colums[2] +") AS countUser, T."+ colums[2] +" FROM T GROUP BY T"+ colums[2]+ " ORDER BY countUser LIMIT 1";
-//
-//        String query = "SELECT COUNT ("
-//                + RelacionUsuarioTareaDao.Properties.IdUser.columnName+
-//                "), "
-//                + RelacionUsuarioTareaDao.Properties.IdUser.columnName+ " from "
-//                + RelacionUsuarioTareaDao.TABLENAME + " GROUP BY "
-//                + RelacionUsuarioTareaDao.Properties.IdUser.columnName + " ORDER BY "
-//                + RelacionUsuarioTareaDao.Properties.IdUser.columnName + " ASC LIMIT 1";
-//
-//        Integer count = 0;
-//        Long idUser = null;
-//
-//
-//        Cursor cursor =
-//                BaseApplication.getInstance().getDaoSession().getDatabase().rawQuery(
-//                        query, null
-//                );
-//
-//        if(cursor.moveToFirst()){
-//            count = cursor.getInt(0);
-//            idUser = cursor.getLong(1);
-//        }
-//        cursor.close();
-
-
-
-
     }
 
     public DaoSession getDaoSession() {
